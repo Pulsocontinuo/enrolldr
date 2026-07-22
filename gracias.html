@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Confirmed — Book Your Consultation | EnrollDR</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+
+  <!-- Calendly widget CSS -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy:      #0F2D5E;
+      --navy-dark: #081A3C;
+      --gold:      #C9A84C;
+      --gold-light:#E8C96A;
+      --gold-pale: #FDF6E3;
+      --white:     #FFFFFF;
+      --off-white: #F7F9FD;
+      --gray-200:  #DDE2EC;
+      --gray-600:  #5A6478;
+      --gray-800:  #2C3447;
+      --green:     #16a34a;
+      --green-bg:  #f0fdf4;
+      --green-border: #bbf7d0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--off-white);
+      color: var(--gray-800);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: var(--navy-dark);
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; height: 64px;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+    }
+    .nav-logo-icon {
+      width: 32px; height: 32px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 1rem;
+    }
+    .nav-logo-text { font-size: 1.25rem; font-weight: 800; color: var(--white); }
+    .nav-logo-text span { color: var(--gold); }
+    .nav-back {
+      margin-left: auto; color: rgba(255,255,255,.65); font-size: 0.88rem;
+      font-weight: 500; text-decoration: none; transition: color .2s;
+    }
+    .nav-back:hover { color: var(--white); }
+
+    /* MAIN CONTENT */
+    .page-wrap {
+      max-width: 820px; margin: 0 auto; padding: 48px 24px 80px;
+    }
+
+    /* SUCCESS BANNER */
+    .success-banner {
+      background: var(--green-bg);
+      border: 1.5px solid var(--green-border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 40px;
+    }
+    .success-icon-circle {
+      width: 52px; height: 52px;
+      background: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .success-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; font-weight: 800;
+      color: #14532d;
+      margin-bottom: 6px;
+    }
+    .success-text p {
+      font-size: 0.95rem;
+      color: #166534;
+      line-height: 1.6;
+    }
+    .success-text strong { font-weight: 700; }
+
+    /* INSTRUCTION BOX */
+    .instruction-box {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 36px;
+    }
+    .instruction-box h2 {
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--navy-dark); margin-bottom: 18px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .steps-list {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .steps-list li {
+      display: flex; align-items: flex-start; gap: 14px;
+      font-size: 0.93rem; color: var(--gray-600); line-height: 1.5;
+    }
+    .step-num {
+      width: 26px; height: 26px;
+      background: linear-gradient(135deg, var(--navy), #1B3F7A);
+      color: var(--gold); font-size: 0.78rem; font-weight: 800;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .steps-list li strong { color: var(--gray-800); }
+
+    /* CALENDLY SECTION */
+    .calendly-wrap {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .calendly-header {
+      background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+      padding: 20px 28px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .calendly-header h2 {
+      font-size: 1.05rem; font-weight: 700; color: var(--white);
+    }
+    .calendly-header p { font-size: 0.85rem; color: rgba(255,255,255,.65); margin-top: 2px; }
+
+    /* Calendly inline widget */
+    .calendly-inline-widget {
+      min-width: 320px;
+      height: 700px;
+    }
+
+    /* FOOTER NOTE */
+    .footer-note {
+      margin-top: 32px; text-align: center;
+      font-size: 0.85rem; color: var(--gray-600); line-height: 1.6;
+    }
+    .footer-note a { color: var(--navy); font-weight: 600; }
+
+    @media (max-width: 600px) {
+      .success-banner { flex-direction: column; padding: 22px 20px; }
+      .instruction-box, .calendly-header { padding: 20px; }
+      .page-wrap { padding: 32px 16px 60px; }
+      .success-text h1 { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">&#x1F393;</div>
+        <span class="nav-logo-text">Enroll<span>DR</span></span>
+      </a>
+      <a href="index.html" class="nav-back">&#x2190; Back to Home</a>
+    </div>
+  </nav>
+
+  <div class="page-wrap">
+
+    <!-- SUCCESS BANNER -->
+    <div class="success-banner" role="alert">
+      <div class="success-icon-circle">&#x2713;</div>
+      <div class="success-text">
+        <h1>Payment Confirmed &mdash; Thank You!</h1>
+        <p>
+          Your $25 consultation payment was received. <strong>Pick your preferred time slot below</strong>
+          and our English-speaking team will meet with you to walk through the entire process and answer every question you have.
+        </p>
+      </div>
+    </div>
+
+    <!-- INSTRUCTIONS -->
+    <div class="instruction-box">
+      <h2>&#x1F4CB; What happens next</h2>
+      <ul class="steps-list">
+        <li>
+          <span class="step-num">1</span>
+          <span><strong>Choose a time slot below.</strong> Pick any day and time that works for you.</span>
+        </li>
+        <li>
+          <span class="step-num">2</span>
+          <span><strong>Enter your name and email.</strong> You'll receive a confirmation and a video/call link.</span>
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          <span><strong>We call you at the scheduled time.</strong> The call is 15 minutes. Have your documents ready if possible.</span>
+        </li>
+        <li>
+          <span class="step-num">4</span>
+          <span><strong>After the call,</strong> if you'd like to proceed with the full service ($300), we'll guide you through the next steps.</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- CALENDLY EMBED -->
+    <div class="calendly-wrap">
+      <div class="calendly-header">
+        <div>
+          <h2>&#x1F4C5; Schedule Your Consultation</h2>
+          <p>15-minute call &mdash; pick the time that suits you best</p>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           REPLACE THE URL BELOW WITH YOUR CALENDLY LINK
+           Example: https://calendly.com/your-username/consultation
+      ============================================================ -->
+      <div
+        class="calendly-inline-widget"
+        data-url="https://calendly.com/isaactrujillo/free-consultation"
+        style="min-width:320px;height:700px;">
+      </div>
+    </div>
+
+    <!-- FOOTER NOTE -->
+    <p class="footer-note">
+      Having trouble? Email us at <a href="mailto:hello@enrolldr.com">hello@enrolldr.com</a> and we'll schedule manually.<br>
+      <a href="index.html">&#x2190; Return to EnrollDR homepage</a>
+    </p>
+
+  </div>
+
+  <!-- Calendly inline widget JS -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+</body>
+</html>
