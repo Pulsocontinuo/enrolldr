@@ -1026,81 +1026,28 @@
   <!-- CONTACT -->
   <section id="contact" aria-labelledby="contact-heading">
     <div class="container">
-      <div class="contact-layout">
-        <div class="contact-intro reveal">
-          <span class="section-label">Get In Touch</span>
-          <h2 class="section-title" id="contact-heading">Ready to Get Started?</h2>
-          <p class="section-subtitle">Choose the option that works best for you. Our English-speaking team is here to help your family navigate the process with ease.</p>
-          <div class="contact-options">
-            <button class="contact-option primary" onclick="openModal('full')" id="contact-full-btn">
-              <div class="co-icon">&#x1F393;</div>
-              <div class="co-text">
-                <div class="co-title">Start Full Service &mdash; $300</div>
-                <div class="co-subtitle">We handle everything, start to finish</div>
-              </div>
-              <span class="co-arrow">&#x2192;</span>
-            </button>
-            <button class="contact-option" onclick="openModal('consultation')" id="contact-consult-btn">
-              <div class="co-icon">&#x1F4DE;</div>
-              <div class="co-text">
-                <div class="co-title">Book a Consultation &mdash; $25</div>
-                <div class="co-subtitle">15-minute call, all your questions answered</div>
-              </div>
-              <span class="co-arrow">&#x2192;</span>
-            </button>
-          </div>
-        </div>
-        <div class="contact-form reveal reveal-delay-2">
-          <h3>Send Us a Message</h3>
-          <p>Prefer to write in first? Fill out the form and we'll get back to you within 24 hours.</p>
-          <form id="contact-form-el" novalidate>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="form-name">Full Name *</label>
-                <input type="text" id="form-name" name="name" placeholder="Jane Smith" required />
-              </div>
-              <div class="form-group">
-                <label for="form-email">Email Address *</label>
-                <input type="email" id="form-email" name="email" placeholder="jane@example.com" required />
-              </div>
+      <div style="max-width:720px;margin:0 auto;text-align:center;" class="reveal">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-title" id="contact-heading">Ready to Get Started?</h2>
+        <p class="section-subtitle" style="margin:0 auto 32px;">Choose the option that works best for you. Our team is here to help your family navigate the process with ease.</p>
+
+        <div class="contact-options" style="margin-top:0;">
+          <button class="contact-option primary" onclick="openModal('full')" id="contact-full-btn">
+            <div class="co-icon">&#x1F393;</div>
+            <div class="co-text">
+              <div class="co-title">Start Full Service &mdash; $300</div>
+              <div class="co-subtitle">We handle everything, start to finish</div>
             </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="form-country">Country of Origin</label>
-                <select id="form-country" name="country">
-                  <option value="">Select a country</option>
-                  <option>United States</option>
-                  <option>Canada</option>
-                  <option>United Kingdom</option>
-                  <option>France</option>
-                  <option>Germany</option>
-                  <option>Spain</option>
-                  <option>Italy</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="form-grade">Child's Current Grade Level</label>
-                <select id="form-grade" name="grade">
-                  <option value="">Select level</option>
-                  <option>Elementary / Primary (K&ndash;5)</option>
-                  <option>Middle School (6&ndash;8)</option>
-                  <option>High School (9&ndash;12)</option>
-                  <option>University / College</option>
-                </select>
-              </div>
+            <span class="co-arrow">&#x2192;</span>
+          </button>
+          <button class="contact-option" onclick="openModal('consultation')" id="contact-consult-btn">
+            <div class="co-icon">&#x1F4DE;</div>
+            <div class="co-text">
+              <div class="co-title">Book a Consultation &mdash; $25</div>
+              <div class="co-subtitle">15-minute call, all your questions answered</div>
             </div>
-            <div class="form-group">
-              <label for="form-message">Your Question or Message</label>
-              <textarea id="form-message" name="message" placeholder="Tell us a little about your situation..."></textarea>
-            </div>
-            <button type="submit" class="form-submit" id="form-submit-btn">Send Message &rarr;</button>
-          </form>
-          <div class="success-msg" id="form-success">
-            <div class="success-icon">&#x2705;</div>
-            <h3>Message Received!</h3>
-            <p>Thank you for reaching out. Our team will reply within 24 hours. In the meantime, feel free to browse the FAQ section above.</p>
-          </div>
+            <span class="co-arrow">&#x2192;</span>
+          </button>
         </div>
       </div>
     </div>
@@ -1221,16 +1168,84 @@
         <p class="modal-note">Pay with PayPal or any Debit/Credit Card. <strong>Translation cost is not included</strong> and will be quoted after we review your documents based on your specific case.</p>
       </div>
 
-      <div id="full-step-2" style="display:none;text-align:center;padding:10px 0;">
-        <div class="modal-icon">&#x2705;</div>
-        <h2 class="modal-title">Payment Confirmed!</h2>
-        <p class="modal-sub" style="margin-bottom:20px;">Thank you for your payment of $300 USD. Your credential recognition process has officially started!</p>
-        <div style="background:var(--off-white);border:1px solid var(--gray-200);border-radius:var(--radius);padding:20px;text-align:left;margin-bottom:20px;">
-          <h4 style="color:var(--navy-dark);font-size:0.95rem;font-weight:700;margin-bottom:8px;">📌 Next Step:</h4>
-          <p style="font-size:0.88rem;color:var(--gray-600);line-height:1.6;">
-            Please send your child's apostilled school transcripts and records by email to <strong style="color:var(--navy);"><a href="mailto:hello@enrolldr.com">hello@enrolldr.com</a></strong>. We will review them and send you the exact translation quote for your case.
-          </p>
+      <div id="full-step-2" style="display:none;text-align:left;padding:10px 0;max-height:75vh;overflow-y:auto;">
+        <div style="text-align:center;margin-bottom:20px;">
+          <div class="modal-icon">&#x2705;</div>
+          <h2 class="modal-title">Payment Confirmed!</h2>
+          <p class="modal-sub">Thank you for your payment of $300 USD. Please fill in your details and upload your student records below to get started.</p>
         </div>
+
+        <form action="https://formsubmit.co/trujilloisaac21@gmail.com" method="POST" enctype="multipart/form-data" class="upload-form">
+          <input type="hidden" name="_subject" value="New Student Credentials Submitted - EnrollDR ($300 Paid)">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+
+          <div class="form-group">
+            <label for="upload-parent-name">Parent / Legal Guardian Full Name *</label>
+            <input type="text" id="upload-parent-name" name="Parent_Full_Name" placeholder="Jane Smith" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="upload-email">Email Address *</label>
+              <input type="email" id="upload-email" name="Email" placeholder="jane@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="upload-phone">Phone / WhatsApp *</label>
+              <input type="tel" id="upload-phone" name="Phone_WhatsApp" placeholder="+1 (555) 000-0000" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="upload-children-count">Number of Children *</label>
+              <select id="upload-children-count" name="Number_of_Children" required>
+                <option value="1">1 Child</option>
+                <option value="2">2 Children</option>
+                <option value="3">3 Children</option>
+                <option value="4+">4+ Children</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="upload-child-name">Child's Full Name(s) *</label>
+              <input type="text" id="upload-child-name" name="Child_Full_Name" placeholder="Child Name" required>
+            </div>
+          </div>
+
+          <hr style="border:none;border-top:1px solid var(--gray-200);margin:20px 0;">
+          <h4 style="color:var(--navy-dark);font-size:1rem;font-weight:700;margin-bottom:14px;">📁 Upload Student Documents:</h4>
+
+          <div class="form-group">
+            <label for="file-grades">1. Certified Grade Records / Transcripts (Notas Certificadas)</label>
+            <input type="file" id="file-grades" name="Notas_Certificadas" multiple accept=".pdf,.png,.jpg,.jpeg,.doc,.docx">
+            <small style="color:var(--gray-600);font-size:0.78rem;">Official year-by-year school grades (PDF or images)</small>
+          </div>
+
+          <div class="form-group">
+            <label for="file-diplomas">2. Diplomas or Certificates (Títulos / Certificados)</label>
+            <input type="file" id="file-diplomas" name="Diplomas_Certificados" multiple accept=".pdf,.png,.jpg,.jpeg,.doc,.docx">
+            <small style="color:var(--gray-600);font-size:0.78rem;">6th grade primary completion or high school diplomas</small>
+          </div>
+
+          <div class="form-group">
+            <label for="file-birth">3. Birth Certificate (Acta de Nacimiento)</label>
+            <input type="file" id="file-birth" name="Acta_de_Nacimiento" multiple accept=".pdf,.png,.jpg,.jpeg,.doc,.docx">
+            <small style="color:var(--gray-600);font-size:0.78rem;">Child's original birth certificate</small>
+          </div>
+
+          <div class="form-group">
+            <label for="file-apostille">4. Hague Apostille Documents (Apostillas de la Haya)</label>
+            <input type="file" id="file-apostille" name="Apostillas" multiple accept=".pdf,.png,.jpg,.jpeg,.doc,.docx">
+            <small style="color:var(--gray-600);font-size:0.78rem;">Apostille certificate(s) from your country of origin</small>
+          </div>
+
+          <div class="form-group">
+            <label for="upload-notes">Additional Notes / Comments</label>
+            <textarea id="upload-notes" name="Additional_Notes" placeholder="Any specific comments about your documents..."></textarea>
+          </div>
+
+          <button type="submit" class="form-submit" style="width:100%;margin-top:10px;">Submit Documents &rarr;</button>
+        </form>
       </div>
 
     </div>
