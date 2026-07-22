@@ -1179,11 +1179,11 @@
           <span class="modal-price-label">Consultation Call (15 min)</span>
           <span class="modal-price-amt">$25 USD</span>
         </div>
-        <button class="paypal-btn" id="paypal-consult-btn" onclick="payAndReveal()">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.59 3.025-2.566 6.243-8.558 6.243H9.828l-1.318 8.33h4.107c.457 0 .846-.332.917-.784l.038-.197.728-4.605.047-.254a.924.924 0 0 1 .917-.784h.578c3.736 0 6.659-1.517 7.511-5.905.358-1.833.172-3.36-.731-4.757z"/></svg>
-          Pay with PayPal &mdash; $25
-        </button>
-        <p class="modal-note">You'll be taken to PayPal in a new tab. Come back here after paying to book your time slot.</p>
+        
+        <!-- PayPal Smart Buttons (PayPal + Credit/Debit Card) -->
+        <div id="paypal-button-container-consultation" style="margin: 16px 0;"></div>
+
+        <p class="modal-note">&#x1F4C5; Pay with PayPal or any Debit/Credit Card. After payment, you will instantly pick your preferred time slot via Calendly.</p>
       </div>
 
       <!-- STEP 2: After paying -->
@@ -1205,20 +1205,39 @@
   <div class="modal-overlay" id="modal-full" role="dialog" aria-modal="true" aria-labelledby="modal-full-title">
     <div class="modal-box">
       <button class="modal-close" onclick="closeModal('full')" aria-label="Close">&#x2715;</button>
-      <div class="modal-icon">&#x1F393;</div>
-      <h2 class="modal-title" id="modal-full-title">Full Credential Recognition</h2>
-      <p class="modal-sub">We handle the entire official credential recognition process in the Dominican Republic &mdash; from certified translation to Ministry authorization delivery.</p>
-      <div class="modal-price">
-        <span class="modal-price-label">Complete Done-For-You Service</span>
-        <span class="modal-price-amt">$300 USD</span>
+
+      <div id="full-step-1">
+        <div class="modal-icon">&#x1F393;</div>
+        <h2 class="modal-title" id="modal-full-title">Full Credential Recognition</h2>
+        <p class="modal-sub">We handle the entire official credential recognition process in the Dominican Republic &mdash; from certified translation to Ministry authorization delivery.</p>
+        <div class="modal-price">
+          <span class="modal-price-label">Complete Done-For-You Service</span>
+          <span class="modal-price-amt">$300 USD</span>
+        </div>
+
+        <!-- PayPal Smart Buttons (PayPal + Credit/Debit Card) -->
+        <div id="paypal-button-container-full" style="margin: 16px 0;"></div>
+
+        <p class="modal-note">Pay with PayPal or any Debit/Credit Card. <strong>Translation cost is not included</strong> and will be quoted after we review your documents based on your specific case.</p>
       </div>
-      <button class="paypal-btn" id="paypal-full-btn" onclick="redirectToPayPal('full')">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.59 3.025-2.566 6.243-8.558 6.243H9.828l-1.318 8.33h4.107c.457 0 .846-.332.917-.784l.038-.197.728-4.605.047-.254a.924.924 0 0 1 .917-.784h.578c3.736 0 6.659-1.517 7.511-5.905.358-1.833.172-3.36-.731-4.757z"/></svg>
-        Pay with PayPal &mdash; $300
-      </button>
-      <p class="modal-note">After payment of $300, send your documents by email. <strong>Translation cost is not included</strong> and will be quoted after we review your documents based on your specific case.</p>
+
+      <div id="full-step-2" style="display:none;text-align:center;padding:10px 0;">
+        <div class="modal-icon">&#x2705;</div>
+        <h2 class="modal-title">Payment Confirmed!</h2>
+        <p class="modal-sub" style="margin-bottom:20px;">Thank you for your payment of $300 USD. Your credential recognition process has officially started!</p>
+        <div style="background:var(--off-white);border:1px solid var(--gray-200);border-radius:var(--radius);padding:20px;text-align:left;margin-bottom:20px;">
+          <h4 style="color:var(--navy-dark);font-size:0.95rem;font-weight:700;margin-bottom:8px;">📌 Next Step:</h4>
+          <p style="font-size:0.88rem;color:var(--gray-600);line-height:1.6;">
+            Please send your child's apostilled school transcripts and records by email to <strong style="color:var(--navy);"><a href="mailto:hello@enrolldr.com">hello@enrolldr.com</a></strong>. We will review them and send you the exact translation quote for your case.
+          </p>
+        </div>
+      </div>
+
     </div>
   </div>
+
+  <!-- PAYPAL JS SDK WITH LIVE CLIENT ID -->
+  <script src="https://www.paypal.com/sdk/js?client-id=BAAiFiPYT_smD4GJsep3LerR5DiHL9f9BMUdtj3vMEyKhfvSRMV3KxuRVk-gt6aqal1DRN5NkE8BJ6fMaM&currency=USD"></script>
 
   <script>
     // NAVBAR SCROLL
@@ -1295,6 +1314,14 @@
           if (s2) s2.style.display = 'none';
         }, 300);
       }
+      if (type === 'full') {
+        setTimeout(() => {
+          const s1 = document.getElementById('full-step-1');
+          const s2 = document.getElementById('full-step-2');
+          if (s1) s1.style.display = 'block';
+          if (s2) s2.style.display = 'none';
+        }, 300);
+      }
     }
 
     document.querySelectorAll('.modal-overlay').forEach(overlay => {
@@ -1310,23 +1337,55 @@
       }
     });
 
-    // PAYPAL LINKS
-    function payAndReveal() {
-      // Open PayPal in new tab
-      window.open('https://paypal.me/ESDfundraising/25', '_blank', 'noopener,noreferrer');
-      // After a short delay, show the "I already paid" step
-      setTimeout(() => {
-        document.getElementById('consult-step-1').style.display = 'none';
-        document.getElementById('consult-step-2').style.display = 'block';
-      }, 2000);
-    }
+    // PAYPAL SMART BUTTONS INTEGRATION (PayPal + Debit/Credit Card)
+    if (typeof paypal !== 'undefined') {
+      // 1. Consultation ($25)
+      paypal.Buttons({
+        style: {
+          layout: 'vertical',
+          color: 'gold',
+          shape: 'pill',
+          label: 'paypal'
+        },
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{
+              amount: { value: '25.00' },
+              description: 'EnrollDR Consultation Call (15 min)'
+            }]
+          });
+        },
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(details) {
+            document.getElementById('consult-step-1').style.display = 'none';
+            document.getElementById('consult-step-2').style.display = 'block';
+          });
+        }
+      }).render('#paypal-button-container-consultation');
 
-    function redirectToPayPal(type) {
-      const urls = {
-        consultation: 'https://paypal.me/ESDfundraising/25',
-        full:         'https://paypal.me/ESDfundraising/300'
-      };
-      window.open(urls[type], '_blank', 'noopener,noreferrer');
+      // 2. Full Service ($300)
+      paypal.Buttons({
+        style: {
+          layout: 'vertical',
+          color: 'gold',
+          shape: 'pill',
+          label: 'paypal'
+        },
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{
+              amount: { value: '300.00' },
+              description: 'EnrollDR Full Credential Recognition Service'
+            }]
+          });
+        },
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(details) {
+            document.getElementById('full-step-1').style.display = 'none';
+            document.getElementById('full-step-2').style.display = 'block';
+          });
+        }
+      }).render('#paypal-button-container-full');
     }
 
     // CONTACT FORM
